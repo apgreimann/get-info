@@ -1,0 +1,24 @@
+#!/bin/bash
+
+file=$1
+lister="$(ls -lh | grep $file)"
+
+clear
+echo ""
+echo "-----------------------------------"
+echo "Get info for $file"
+echo "------------------------------------"
+echo "Name: $file"
+echo "Location: $(pwd)"
+echo "Date modified: $(echo $lister | awk '{print $6 $7}' )"
+echo "Size: $(echo $lister | awk '{print $5}' )"
+echo "Permissions: $(echo $lister | awk '{print $1}' )"
+echo ""
+echo "Kind: $(file $file)"
+echo ""
+echo "------------------------------------"
+echo ""
+echo "Get info 0.0.1a1"
+echo "Based on the get info box on MacOS and BeOS"
+echo "Copyright 2017 Andrew Greimann"
+echo ""
